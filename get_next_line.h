@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <string.h>
 
 char	*get_next_line(int fd);
 int		ft_save_buffer(int fd, char *buffer);
