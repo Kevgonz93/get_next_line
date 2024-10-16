@@ -24,7 +24,6 @@ char	*ft_get_line(char *buffer)
 	size = 0;
 	while (buffer[size] != '\n' && buffer[size] != 0)
 		size++;
-	printf("the line's size is: %d.\n", size);
 	line = malloc(size * sizeof(char));
 	if (!line)
 		return (0);
