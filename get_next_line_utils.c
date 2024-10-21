@@ -1,9 +1,4 @@
 #include "get_next_line.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
 
 int	ft_save_buffer(int fd, char *buffer)
 {
@@ -24,10 +19,10 @@ char	*ft_get_line(char *buffer)
 	size = 0;
 	while (buffer[size] != '\n' && buffer[size] != 0)
 		size++;
-	line = malloc(size * sizeof(char));
+	line = ft_calloc((size + 1), sizeof(char));
 	if (!line)
 		return (0);
-	line = memcpy(line, buffer, size);
+	line = ft_memcpy(line, buffer, size);
 	line[size] = 0;
 	return (line);
 }
