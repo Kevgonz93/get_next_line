@@ -40,13 +40,14 @@ int	main(int argc, char **argv)
 	printf("file open \n");
 	if (fd == -1)
 		return (printf("error to open.\n"), 1);
-	line = malloc(BUFFER_SIZE * sizeof(char));
+	line = (char *)malloc(BUFFER_SIZE * sizeof(char));
 	if (!line)
-		return (NULL);
+		return (0);
 	while (line != NULL)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
+		if (line != NULL)
+			printf("%s", line);
 		free(line);
 	}
 	close(fd);

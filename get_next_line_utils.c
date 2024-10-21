@@ -45,8 +45,8 @@ char	*ft_get_line(char *buffer)
 	if (tempo[size] == '\n')
 		line[size++] = '\n';
 	line[size] = '\0';
-	if (tempo[size] == '\n')
-		*buffer += (size + 1);
+	if (tempo[size - 1] == '\n')
+		*buffer += (size - 1);
 	else
 		*buffer += size;
 	return (line);
