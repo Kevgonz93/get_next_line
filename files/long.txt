@@ -1,0 +1,1 @@
+Una línea muy larga que supera el tamaño del búfer configurado en la función, pero que no contiene saltos de línea.Una línea muy larga que supera el tamaño del búfer configurado en la función, pero que no contiene saltos de línea.Una línea muy larga que supera el tamaño del búfer configurado en la función, pero que no contiene saltos de línea.

@@ -24,33 +24,3 @@ char	*get_next_line(int fd)
 	line = ft_get_line(buffer);
 	return (line);
 }
-
-int	main(int argc, char **argv)
-{
-	int		fd;
-	char	*line;
-
-	(void)argc;
-	if (argc < 2)
-	{
-		printf("write the name file \n");
-		return (0);
-	}
-	fd = open(argv[1], O_RDONLY);
-	printf("file open \n");
-	if (fd == -1)
-		return (printf("error to open.\n"), 1);
-	line = (char *)malloc(BUFFER_SIZE * sizeof(char));
-	if (!line)
-		return (0);
-	while (line != NULL)
-	{
-		line = get_next_line(fd);
-		if (line != NULL)
-			printf("%s", line);
-		free(line);
-	}
-	close(fd);
-	printf("file closed \n");
-	return (0);
-}
