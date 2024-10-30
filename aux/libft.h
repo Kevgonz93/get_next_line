@@ -13,6 +13,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdio.h>
 
 ///	LIBC FUNCTIONS
 void	*ft_memset(void *buff, int value, size_t size);

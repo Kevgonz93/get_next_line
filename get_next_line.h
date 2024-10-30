@@ -17,7 +17,7 @@
 #  define BUFFER_SIZE 1024
 # endif
 
-# include "libft.h"
+# include "aux/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -25,8 +25,17 @@
 # include <string.h>
 # include <stddef.h>
 
+// principals 
+
 char	*get_next_line(int fd);
-int		ft_save_buffer(int fd, char *buffer);
-char	*ft_get_line(char *buffer);
+char	*get_line(char *storage);
+char	*new_storage(char *storage);
+
+// aux
+
+void	*ft_calloc(size_t data, size_t size);
+char	*ft_strchr(const char *c, int n);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *str);
 
 #endif
