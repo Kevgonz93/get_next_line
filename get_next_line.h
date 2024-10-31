@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
+#  define BUFFER_SIZE 42
 # endif
 
 # include "aux/libft.h"
@@ -35,7 +35,7 @@ char	*new_storage(char *storage);
 
 void	*ft_calloc(size_t data, size_t size);
 char	*ft_strchr(const char *c, int n);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 
 #endif
