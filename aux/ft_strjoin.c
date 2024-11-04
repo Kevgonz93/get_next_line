@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+char	*pre_join(char *str)
+{
+	char	*result;
+
+	result = ft_calloc(ft_strlen(str) + 1, sizeof(char));
+	if (result)
+		ft_memcpy(result, str, ft_strlen(str));
+	return (result);
+}
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*result;
@@ -21,19 +31,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-	{
-		result = ft_calloc(ft_strlen(s2) + 1, sizeof(char));
-		if (result)
-			ft_memcpy(result, s2, ft_strlen(s2));
-		return (result);
-	}
+		return (pre_join(s2));
 	if (!s2)
-	{
-		result = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
-		if (result)
-			ft_memcpy(result, s2, ft_strlen(s2));
-		return (result);
-	}
+		return (pre_join(s1));
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	result = ft_calloc(i + j + 1, sizeof(char));
