@@ -12,50 +12,75 @@
 
 #include "get_next_line.h"
 
-char	*get_line(char *storage)
+void	*ft_calloc(size_t data, size_t size)
 {
-	size_t	i;
-	char	*line;
+	void	*prt;
 
-	i = 0;
-	if (!storage || !*storage)
+	prt = malloc(size * data);
+	if (!prt)
 		return (NULL);
-	while (storage[i] && storage[i] != '\n')
-		i++;
-	line = ft_calloc((i + 2), sizeof(char));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (storage[i] && storage[i] != '\n')
-	{
-		line[i] = storage[i];
-		i++;
-	}
-	if (storage[i] == '\n')
-		line[i++] = '\n';
-	line[i] = '\0';
-	return (line);
+	return (ft_memset(prt, 0, size * data));
 }
 
-char	*new_storage(char *storage)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	j;
-	char	*new_storage;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	i = 0;
-	while (storage[i] && storage[i] != '\n')
-		i++;
-	if (!storage[i])
-		return (free(storage), NULL);
-	new_storage = ft_calloc((ft_strlen(storage) - i), sizeof(char));
-	if (!new_storage)
+	if (!dest && !src)
 		return (NULL);
-	i++;
-	j = 0;
-	while (storage[i])
-		new_storage[j++] = storage[i++];
-	new_storage[j] = '\0';
-	free(storage);
-	return (new_storage);
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	while (n--)
+		*d++ = *s++;
+	return (dest);
+}
+
+void	*ft_memset(void *buff, int value, size_t size)
+{
+	size_t				i;
+	unsigned char		*ptr;
+
+	ptr = (unsigned char *)buff;
+	i = 0;
+	while (i < size)
+	{
+		ptr[i] = (unsigned char)value;
+		i++;
+	}
+	return (buff);
+}
+
+static char	*pre_join(char *str)
+{
+	char	*result;
+
+	result = ft_calloc(ft_strlen(str) + 1, sizeof(char));
+	if (result)
+		ft_memcpy(result, str, ft_strlen(str));
+	return (result);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*result;
+	int		i;
+	int		j;
+
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (pre_join(s2));
+	if (!s2)
+		return (pre_join(s1));
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	result = ft_calloc(i + j + 1, sizeof(char));
+	if (!result)
+		return (NULL);
+	ft_memcpy(result, s1, i);
+	ft_memcpy(result + i, s2, j);
+	result[i + j] = '\0';
+	free(s1);
+	return (result);
 }

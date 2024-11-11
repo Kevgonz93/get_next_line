@@ -17,7 +17,6 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# include "aux/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -31,9 +30,11 @@ char	*get_next_line(int fd);
 char	*get_line(char *storage);
 char	*new_storage(char *storage);
 
-// aux
+// utils
 
 void	*ft_calloc(size_t data, size_t size);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *buff, int value, size_t size);
 char	*ft_strchr(const char *c, int n);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
