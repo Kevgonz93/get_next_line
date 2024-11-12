@@ -7,11 +7,11 @@ Versión: 12
 
 ## Índice general
 
-I. Objetivos 2
-II. Instrucciones generales 3
-III. Parte obligatoria 5
-IV. Parte bonus 8
-V. Entrega y evaluación 9
+I. Objetivos
+II. Instrucciones generales
+III. Parte obligatoria
+IV. Parte bonus
+V. Entrega y evaluación
 
 ## Capítulo I
 ### Objetivos
