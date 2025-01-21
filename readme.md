@@ -54,10 +54,10 @@ Este proyecto no requiere ninguna instalación especial. Solo necesitas compilar
 
 Para probar la implementación, se recomienda usar varios archivos de prueba con diferentes casos, tales como:
 
-• 📂 Archivos vacíos.
-• 📝 Archivos con múltiples líneas.
-• 📏 Archivos con líneas muy largas.
-• ↔ Archivos con solo saltos de línea.
+- 📂 Archivos vacíos.
+- 📝 Archivos con múltiples líneas.
+- 📏 Archivos con líneas muy largas.
+- ↔ Archivos con solo saltos de línea.
 
 Encontrarás en el directorio "txt" distintos archivos con los casos anteriores, incluso con la letra de [Duality](https://www.youtube.com/watch?v=6fVE8kSM43I)
 
