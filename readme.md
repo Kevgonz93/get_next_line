@@ -51,7 +51,7 @@ Para probar la implementación, se recomienda usar varios archivos de prueba con
 • Archivos con líneas muy largas.
 • Archivos con solo saltos de línea.
 
-Encontrarás en el directorio txt distintos archivos con los casos anteriores, incluso con la letra de [Duality] (https://www.youtube.com/watch?v=6fVE8kSM43I)
+Encontrarás en el directorio txt distintos archivos con los casos anteriores, incluso con la letra de [Duality](https://www.youtube.com/watch?v=6fVE8kSM43I)
 
 ## Consideraciones
 
@@ -60,4 +60,4 @@ Encontrarás en el directorio txt distintos archivos con los casos anteriores, i
 
 ## Autor
 
-[Kevin Gonzales] (https://github.com/Kevgonz93)
+[Kevin Gonzales](https://github.com/Kevgonz93)
