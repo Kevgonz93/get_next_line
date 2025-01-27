@@ -65,8 +65,8 @@ Encontrarás en el directorio "txt" distintos archivos con los casos anteriores,
 
 ## ⚠️ Consideraciones
 
-• Gestión de memoria: Asegúrate de liberar correctamente la memoria después de usarla para evitar fugas.
-• Norminette: El código debe cumplir con las restricciones de la Norminette, por lo que las funciones no deben exceder las 25 líneas y el estilo de código debe ser consistente con las reglas de indentación.
+- Gestión de memoria: Asegúrate de liberar correctamente la memoria después de usarla para evitar fugas.
+- Norminette: El código debe cumplir con las restricciones de la Norminette, por lo que las funciones no deben exceder las 25 líneas y el estilo de código debe ser consistente con las reglas de indentación.
 
 ---
 
