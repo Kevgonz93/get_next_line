@@ -2,19 +2,51 @@
 
 ## 📜 Descripción
 
-El proyecto **Get Next Line** de 42 consiste en implementar una función que lea una línea de un archivo a la vez, devolviendo cada línea hasta que se haya leído todo el archivo. La función debe gestionar correctamente la memoria y manejar archivos de cualquier tamaño, utilizando `read` para leer el contenido.
+ **Get Next Line** es un proyecto de 42 que consiste en implementar una función que lea una línea de un archivo a la vez, devolviendo cada línea hasta que se haya leído todo el archivo. La función debe gestionar correctamente la memoria y manejar archivos de cualquier tamaño, utilizando `read` para leer el contenido.
 
 ---
 
 ## 📋 Requisitos
 
-- **Norminette**: El código debe cumplir con las reglas de estilo de la Norminette de 42.
-- **Lenguaje**: El proyecto debe ser implementado en C.
-- **Librerías**: Uso de las funciones estándar de C como `read`, `malloc`, `free`, entre otras.
+Antes de compilar y ejecutar el proyecto, asegúrate de tener:
+
+- 🛠️ **`gcc`**: Compilador de C.
+- 🛠️ **`make`**: Herramienta de construcción.
+- 🖥️ **Sistema operativo**: Unix o Mac.
 
 ---
 
-## 🛠 Función principal
+## 🛠️ Cómo Compilar y Ejecutar
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Kevgonz93/get_next_line.git
+   ```
+
+2. Navega al directorio del proyecto:
+   ```bash
+   cd get_next_line
+   ```
+
+3. Compila el código:
+   ```bash
+   make
+   ```
+
+4. Compila junto a el main facilitado u otro que tengas:
+   ```bash
+   cc gnl_main.c libgnl -o gnl
+   ```
+
+5. Ejecuta para ver el resultado:
+
+    ```bash
+    ./gnl
+   ```
+
+---
+
+## 🚀 Características
 
 ### `get_next_line(int fd)`
 
@@ -25,28 +57,6 @@ Esta es la función principal del proyecto. Lee una línea desde el archivo cuyo
 - 📄 La función debe ser capaz de leer archivos de cualquier tamaño.
 - 🔄 Se debe leer una línea completa a la vez, gestionando correctamente los saltos de línea.
 - 💡 El contenido debe ser leído de manera eficiente y sin desperdicio de memoria.
-
----
-
-## 💾 Instalación
-
-Este proyecto no requiere ninguna instalación especial. Solo necesitas compilar el código junto con un archivo principal o de prueba que invoque la función `get_next_line`.
-
-### Pasos para compilar
-
-1. Clona el repositorio:
-
-   git clone https://github.com/Kevgonz93/get_next_line.git
-
-2. Navega al directorio del proyecto:
-
-   cd get_next_line
-
-3. Compila el código:
-
-   make
-
-4. Ejecuta las pruebas o tu propio archivo para probar la función get_next_line.
 
 ---
 
@@ -63,10 +73,20 @@ Encontrarás en el directorio "txt" distintos archivos con los casos anteriores,
 
 ---
 
-## ⚠️ Consideraciones
+## 📂 Estructura del Proyecto
 
-- Gestión de memoria: Asegúrate de liberar correctamente la memoria después de usarla para evitar fugas.
-- Norminette: El código debe cumplir con las restricciones de la Norminette, por lo que las funciones no deben exceder las 25 líneas y el estilo de código debe ser consistente con las reglas de indentación.
+```
+📦 printf
+├── 📂 txt                 # Archivos de prueba
+├── get_next_line_utils.c  # Funciones auxiliares
+├── get_next_line_.c       # Funciones principales
+├── get_next_line.h        # Archivo de cabecera
+├── gnl_main.c             # Archivo con main tester
+├── Makefile               # Para compilar la librería **(no se entrega)**
+├── README.md              # Este archivo
+├── subject.md             # Enunciado en markdown
+└── subject.pdf            # Enunciado del proyecto en pdf
+
 
 ---
 

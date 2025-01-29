@@ -7,12 +7,10 @@ void	test_file(const char *filename)
 {
 	int		fd;
 	char	*line;
-	int		i;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (perror("ERROR: The file could not be read."));
-	i = 0;
 	printf("Testing file: %s\n", filename);
 	while ((line = get_next_line(fd)) != NULL)
 	{
@@ -25,10 +23,6 @@ void	test_file(const char *filename)
 
 int	main(int argc, char *argv[])
 {
-	int	i;
-
-	(void)argv;
-	i = 1;
 	if (argc == 1)
 	{
 		test_file("txt/5_single.txt");
