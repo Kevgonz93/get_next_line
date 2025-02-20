@@ -12,75 +12,50 @@
 
 #include "get_next_line.h"
 
-void	*ft_calloc(size_t data, size_t size)
+char	*get_line(char *storage)
 {
-	void	*prt;
+	size_t	i;
+	char	*line;
 
-	prt = malloc(size * data);
-	if (!prt)
-		return (NULL);
-	return (ft_memset(prt, 0, size * data));
-}
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char		*d;
-	const unsigned char	*s;
-
-	if (!dest && !src)
-		return (NULL);
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
-}
-
-void	*ft_memset(void *buff, int value, size_t size)
-{
-	size_t				i;
-	unsigned char		*ptr;
-
-	ptr = (unsigned char *)buff;
 	i = 0;
-	while (i < size)
+	if (!storage || !*storage)
+		return (NULL);
+	while (storage[i] && storage[i] != '\n')
+		i++;
+	line = ft_calloc((i + 2), sizeof(char));
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (storage[i] && storage[i] != '\n')
 	{
-		ptr[i] = (unsigned char)value;
+		line[i] = storage[i];
 		i++;
 	}
-	return (buff);
+	if (storage[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
+	return (line);
 }
 
-static char	*pre_join(char *str)
+char	*new_storage(char *storage)
 {
-	char	*result;
+	size_t	i;
+	size_t	j;
+	char	*new_storage;
 
-	result = ft_calloc(ft_strlen(str) + 1, sizeof(char));
-	if (result)
-		ft_memcpy(result, str, ft_strlen(str));
-	return (result);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	char	*result;
-	int		i;
-	int		j;
-
-	if (!s1 && !s2)
+	i = 0;
+	while (storage[i] && storage[i] != '\n')
+		i++;
+	if (!storage[i])
+		return (free(storage), NULL);
+	new_storage = ft_calloc((ft_strlen(storage) - i), sizeof(char));
+	if (!new_storage)
 		return (NULL);
-	if (!s1)
-		return (pre_join(s2));
-	if (!s2)
-		return (pre_join(s1));
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	result = ft_calloc(i + j + 1, sizeof(char));
-	if (!result)
-		return (NULL);
-	ft_memcpy(result, s1, i);
-	ft_memcpy(result + i, s2, j);
-	result[i + j] = '\0';
-	free(s1);
-	return (result);
+	i++;
+	j = 0;
+	while (storage[i])
+		new_storage[j++] = storage[i++];
+	new_storage[j] = '\0';
+	free(storage);
+	return (new_storage);
 }

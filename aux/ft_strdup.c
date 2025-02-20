@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kegonzal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 14:40:17 by kegonzal          #+#    #+#             */
-/*   Updated: 2024/10/21 14:40:19 by kegonzal         ###   ########.fr       */
+/*   Created: 2024/09/18 12:15:17 by kegonzal          #+#    #+#             */
+/*   Updated: 2024/09/18 12:15:18 by kegonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "aux.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+char	*ft_strdup(const char *s)
+{
+	size_t	size;
+	size_t	i;
+	char	*copy;
 
-# include "aux/aux.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include <string.h>
-# include <stddef.h>
-
-// PRINCIPAL
-
-char	*get_next_line(int fd);
-
-// UTILS
-
-char	*get_line(char *storage);
-char	*new_storage(char *storage);
-
-#endif
+	i = 0;
+	size = ft_strlen(s);
+	copy = (char *)ft_calloc(size + 1, sizeof(char));
+	if (copy == NULL)
+		return (NULL);
+	while (s[i] != 0)
+	{
+		copy[i] = s[i];
+		i++;
+	}
+	copy[i] = 0;
+	return (copy);
+}
